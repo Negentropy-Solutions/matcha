@@ -1,0 +1,46 @@
+{
+ "doctype": "DocType",
+ "name": "Matcha Settings",
+ "module": "Matcha",
+ "issingle": 1,
+ "custom": 0,
+ "istable": 0,
+ "editable_grid": 0,
+ "track_changes": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_intercompany",
+  "intercompany_accounts"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_intercompany",
+   "fieldtype": "Section Break",
+   "label": "Intercompany Reconciliation"
+  },
+  {
+   "fieldname": "intercompany_accounts",
+   "fieldtype": "Table",
+   "label": "Intercompany Transfer Accounts",
+   "options": "Matcha Intercompany Account",
+   "description": "For each company, specify the account that acts as the intercompany bridge (e.g. 'Due from / Due to group company'). Required to reconcile a payment in one company against an invoice in another."
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Accounts Manager",
+   "read": 1,
+   "write": 1
+  }
+ ],
+ "allow_rename": 0,
+ "is_submittable": 0,
+ "quick_entry": 0
+}

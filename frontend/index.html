@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/assets/matcha/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/matcha/favicon.png" />
+    <title>Matcha</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <script>
+      window.csrf_token = '{{ frappe.session.csrf_token }}';
+      if (!window.frappe) window.frappe = {};
+      window.frappe.csrf_token = window.csrf_token;
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

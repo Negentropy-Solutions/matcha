@@ -1,0 +1,134 @@
+{
+ "doctype": "DocType",
+ "name": "Matcha Reconciliation Log",
+ "module": "Matcha",
+ "custom": 0,
+ "istable": 0,
+ "editable_grid": 0,
+ "track_changes": 1,
+ "track_seen": 0,
+ "track_views": 0,
+ "engine": "InnoDB",
+ "field_order": [
+  "reference_section",
+  "bank_transaction",
+  "company",
+  "bank_account",
+  "voucher_section",
+  "voucher_type",
+  "voucher",
+  "action_section",
+  "action",
+  "batch_id",
+  "rule",
+  "reconciled_amount",
+  "note"
+ ],
+ "fields": [
+  {
+   "fieldname": "reference_section",
+   "fieldtype": "Section Break",
+   "label": "Bank Transaction"
+  },
+  {
+   "fieldname": "bank_transaction",
+   "fieldtype": "Link",
+   "label": "Bank Transaction",
+   "options": "Bank Transaction",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "bank_account",
+   "fieldtype": "Link",
+   "label": "Bank Account",
+   "options": "Bank Account"
+  },
+  {
+   "fieldname": "voucher_section",
+   "fieldtype": "Section Break",
+   "label": "Voucher"
+  },
+  {
+   "fieldname": "voucher_type",
+   "fieldtype": "Link",
+   "label": "Voucher Type",
+   "options": "DocType",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "voucher",
+   "fieldtype": "Dynamic Link",
+   "label": "Voucher",
+   "options": "voucher_type",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "action_section",
+   "fieldtype": "Section Break",
+   "label": "Action"
+  },
+  {
+   "fieldname": "action",
+   "fieldtype": "Select",
+   "label": "Action",
+   "options": "Matched\nVoucher Created\nUnreconciled\nInternal Transfer\nBank Entry\nPayment Entry",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "batch_id",
+   "fieldtype": "Data",
+   "label": "Batch ID"
+  },
+  {
+   "fieldname": "rule",
+   "fieldtype": "Link",
+   "label": "Rule",
+   "options": "Matcha Bank Rule"
+  },
+  {
+   "fieldname": "reconciled_amount",
+   "fieldtype": "Currency",
+   "label": "Reconciled Amount"
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Small Text",
+   "label": "Note"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "Accounts User",
+   "read": 1,
+   "create": 1
+  },
+  {
+   "role": "Accounts Manager",
+   "read": 1,
+   "write": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  }
+ ],
+ "allow_copy": 0,
+ "allow_events_in_timeline": 0,
+ "allow_guest_to_view": 0,
+ "allow_rename": 0,
+ "beta": 0,
+ "has_web_view": 0,
+ "is_submittable": 0,
+ "quick_entry": 0,
+ "show_preview_popup": 0
+}
+

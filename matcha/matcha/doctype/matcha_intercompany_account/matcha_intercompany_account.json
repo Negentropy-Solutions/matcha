@@ -1,0 +1,35 @@
+{
+ "doctype": "DocType",
+ "name": "Matcha Intercompany Account",
+ "module": "Matcha",
+ "istable": 1,
+ "editable_grid": 1,
+ "track_changes": 0,
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "intercompany_account"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "in_list_view": 1,
+   "reqd": 1,
+   "columns": 3
+  },
+  {
+   "fieldname": "intercompany_account",
+   "fieldtype": "Link",
+   "label": "Intercompany Transfer Account",
+   "options": "Account",
+   "in_list_view": 1,
+   "reqd": 1,
+   "columns": 5,
+   "description": "Account used as the bridge for intercompany payment transfers (e.g. Due from / Due to group company). Must exist in the chart of accounts for the selected company."
+  }
+ ],
+ "permissions": []
+}
