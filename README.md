@@ -10,6 +10,8 @@
     <a href="https://github.com/Negentropy-Solutions/matcha/issues">Issues</a>
     ·
     <a href="https://github.com/Negentropy-Solutions/matcha">Repository</a>
+    ·
+    <a href="https://negentropysolutions.com/">Negentropy Solutions</a>
   </p>
 </p>
 
