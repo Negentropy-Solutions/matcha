@@ -4,7 +4,8 @@ authors = [
     { name = "Negentropy Solutions", email = "support@negentropysolutions.com"}
 ]
 description = "Payment reconciliation made simple for ERPNext"
-requires-python = ">=3.10"
+# Frappe / ERPNext v16 require Python 3.14+
+requires-python = ">=3.14"
 readme = "README.md"
 dynamic = ["version"]
 dependencies = [
@@ -26,7 +27,8 @@ erpnext = ">=15.0.0 <17.0.0"
 
 [tool.ruff]
 line-length = 110
-target-version = "py310"
+# Ruff does not yet support a py314 target; use the closest stable target.
+target-version = "py313"
 
 [tool.ruff.lint]
 select = [
