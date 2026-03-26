@@ -1,4 +1,4 @@
-/* global React, ReactDOM, frappe */
+/* global React, ReactDOM */
 
 // Lightweight React SPA for Matcha bank reconciliation.
 // Uses the public Matcha APIs where available and mock data for

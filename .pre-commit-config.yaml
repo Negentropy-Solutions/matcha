@@ -39,6 +39,7 @@ repos:
         exclude: |
             (?x)^(
                 matcha/public/dist/.*|
+                matcha/public/matcha/assets/.*|
                 .*node_modules.*|
                 .*boilerplate.*|
                 matcha/templates/includes/.*|
@@ -56,6 +57,7 @@ repos:
         exclude: |
             (?x)^(
                 matcha/public/dist/.*|
+                matcha/public/matcha/assets/.*|
                 cypress/.*|
                 .*node_modules.*|
                 .*boilerplate.*|
