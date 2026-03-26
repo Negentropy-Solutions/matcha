@@ -112,7 +112,7 @@
  ],
  "quick_entry": 0,
  "show_preview_popup": 0,
- "sort_field": "modified",
+ "sort_field": "creation",
  "sort_order": "DESC",
  "track_changes": 0
 }
