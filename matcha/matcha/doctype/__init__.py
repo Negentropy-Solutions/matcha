@@ -1,4 +1,3 @@
 """
 DocType package for Matcha.
 """
-

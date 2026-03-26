@@ -1,2 +1,1 @@
 """Matcha Settings DocType package."""
-

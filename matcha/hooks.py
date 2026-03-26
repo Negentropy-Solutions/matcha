@@ -12,17 +12,17 @@ app_license = "agpl-3.0"
 
 # Each item in the list will be shown as an app in the apps page
 add_to_apps_screen = [
-    {
-        "name": "matcha",
-        "logo": "/assets/matcha/icon.png",
-        "title": "Matcha",
-        "route": "/matcha",
-    }
+	{
+		"name": "matcha",
+		"logo": "/assets/matcha/icon.png",
+		"title": "Matcha",
+		"route": "/matcha",
+	}
 ]
 
 # Route all /matcha/* sub-paths to the SPA so React Router can handle them
 website_route_rules = [
-    {"from_route": "/matcha/<path:app_path>", "to_route": "matcha"},
+	{"from_route": "/matcha/<path:app_path>", "to_route": "matcha"},
 ]
 
 # Includes in <head>
@@ -250,4 +250,3 @@ website_route_rules = [
 # ------------
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
-
