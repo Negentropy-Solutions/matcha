@@ -113,7 +113,11 @@ It is built on [Frappe Framework](https://frappeframework.com) with a React UI a
 - **ERPNext**: `>=15.0.0` and `<16.0.0`
 - **Python**: `>=3.10`
 
-These match `[tool.bench.frappe-dependencies]` in `pyproject.toml`. Use a v15 bench; do not install on v14 or v16 unless you publish a release that explicitly supports those ranges.
+- **Frappe**: `>=15.0.0` and `<17.0.0` (supports v15 and v16)
+- **ERPNext**: `>=15.0.0` and `<17.0.0`
+- **Python**: `>=3.10` (Frappe v16 requires newer core dependencies as per the v16 migration guide)
+
+These match `[tool.bench.frappe-dependencies]` in `pyproject.toml`.
 
 You can install this app using the [bench](https://github.com/frappe/bench) CLI:
 
