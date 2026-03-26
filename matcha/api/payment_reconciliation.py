@@ -187,8 +187,8 @@ def _payment_row(
 def _get_jv_payments(company, party_type, party, account, from_date, to_date, limit):
     """Return Journal Entry rows as payment-like entries (same party/account, unallocated)."""
     # Defensive: some callers may pass a single-item list/tuple for account.
-    if isinstance(account, (list, tuple, set)):
-        account = list(account)[0] if len(account) == 1 else None
+    if isinstance(account, list | tuple | set):
+        account = next(iter(account)) if len(account) == 1 else None
     if not isinstance(account, str) or not account:
         return []
 
@@ -463,7 +463,7 @@ def get_payments(
                                 + " IN ("
                                 + placeholders
                                 + ")",
-                                [company, party_type, party, expected_payment_type] + accounts_list,
+                                [company, party_type, party, expected_payment_type, *accounts_list],
                             )
                             pe_count = int(r[0][0]) if r else 0
                 except Exception:
@@ -1238,7 +1238,6 @@ def reconcile(
 
     # Log for history and undo
     total_allocated = sum(d["allocated_amount"] for d in allocation_details)
-    currency = (allocation_details[0] if allocation_details else {})
     inv_currency = None
     for inv in pr.invoices:
         if inv.invoice_number == (allocation_details[0].get("invoice_number") if allocation_details else None):
@@ -1745,9 +1744,6 @@ def reconcile_xco(
             "No intercompany transfer account configured for {0}. "
             "Go to Matcha Settings → Intercompany Transfer Accounts and add one."
         ).format(payment_company))
-    pay_co_fx_account = frappe.get_cached_value(
-        "Company", payment_company, "exchange_gain_loss_account"
-    )
 
     for alloc in alloc_list:
         invoice_company = alloc.get("invoice_company")
@@ -1788,7 +1784,7 @@ def reconcile_xco(
         # allocated_amount is in the invoice's foreign currency (e.g. INR).
         # Convert to base currency of each company.
         # If both companies share the same base currency (common for subsidiaries),
-        # the FX diff is simply the rate difference × foreign amount.
+        # the FX diff is simply the rate difference x foreign amount.
         if pay_foreign_currency != pay_company_currency:
             # Multi-currency payment: amounts are in foreign currency
             pay_base_amount = flt(allocated_amount) * pay_exchange_rate

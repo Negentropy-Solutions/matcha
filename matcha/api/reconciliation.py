@@ -1,5 +1,5 @@
 import json
-from typing import Iterable
+from collections.abc import Iterable
 
 import frappe
 from frappe import _
@@ -61,7 +61,7 @@ def reconcile_vouchers(bank_transaction: str, vouchers: str, is_new_voucher: int
 
     try:
         voucher_list: Iterable[dict] = json.loads(vouchers)
-    except Exception as exc:  # noqa: BLE001
+    except Exception as exc:
         frappe.throw(_("Invalid vouchers payload: {0}").format(exc))
 
     for item in voucher_list:

@@ -1,0 +1,8 @@
+# Generated frontend bundles (compiled/minified)
+matcha/public/matcha/assets/
+matcha/public/dist/
+
+# Third-party/vendor code
+**/node_modules/
+matcha/public/js/lib/
+

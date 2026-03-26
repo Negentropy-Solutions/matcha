@@ -12,7 +12,7 @@ def get_context(context):
         frappe.throw("You need to be logged in to access Matcha.", frappe.PermissionError)
 
     context.no_cache = 1
-    context.title = "Matcha – Payment Reconciliation"
+    context.title = "Matcha - Payment Reconciliation"
     context.show_sidebar = False
 
 
